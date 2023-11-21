@@ -1,0 +1,779 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0CB93D0CAA4B46D384C6A9F4 /* Pods_CinnoxCallTester.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF63F9AE3BC2D0E225938225 /* Pods_CinnoxCallTester.framework */; };
+		BF08E1B42B07603F00D54E32 /* M800ServiceInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF08E1B32B07603F00D54E32 /* M800ServiceInfo.plist */; };
+		DD25948929C718B9000B1806 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD25948829C718B9000B1806 /* AppDelegate.swift */; };
+		DD25948B29C718B9000B1806 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD25948A29C718B9000B1806 /* SceneDelegate.swift */; };
+		DD25948D29C718B9000B1806 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD25948C29C718B9000B1806 /* LoginViewController.swift */; };
+		DD25949029C718B9000B1806 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD25948E29C718B9000B1806 /* Main.storyboard */; };
+		DD25949229C718BA000B1806 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD25949129C718BA000B1806 /* Assets.xcassets */; };
+		DD25949529C718BA000B1806 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD25949329C718BA000B1806 /* LaunchScreen.storyboard */; };
+		DD2594A029C718BB000B1806 /* CinnoxCallTesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD25949F29C718BB000B1806 /* CinnoxCallTesterTests.swift */; };
+		DD2594AA29C718BB000B1806 /* CinnoxCallTesterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2594A929C718BB000B1806 /* CinnoxCallTesterUITests.swift */; };
+		DD2594AC29C718BB000B1806 /* CinnoxCallTesterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2594AB29C718BB000B1806 /* CinnoxCallTesterUITestsLaunchTests.swift */; };
+		DD2594E629C71AD4000B1806 /* CallkitIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DD2594E529C71AD4000B1806 /* CallkitIcon.png */; };
+		DD2594E929C71ADD000B1806 /* Calling_in.wav in Resources */ = {isa = PBXBuildFile; fileRef = DD2594E729C71ADD000B1806 /* Calling_in.wav */; };
+		DD2594EA29C71ADD000B1806 /* Multi_calling.wav in Resources */ = {isa = PBXBuildFile; fileRef = DD2594E829C71ADD000B1806 /* Multi_calling.wav */; };
+		DDAC8DF829F65EDA00875C30 /* CallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAC8DF729F65EDA00875C30 /* CallViewController.swift */; };
+		DDAC8DFA29F666F800875C30 /* RoundImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAC8DF929F666F800875C30 /* RoundImageButton.swift */; };
+		DDAC8DFC29F7AD0E00875C30 /* KeyPadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAC8DFB29F7AD0E00875C30 /* KeyPadViewController.swift */; };
+		DDF669C929C808FC0002E61F /* MakeCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF669C829C808FC0002E61F /* MakeCallViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DD25949C29C718BB000B1806 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD25947D29C718B9000B1806 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD25948429C718B9000B1806;
+			remoteInfo = CinnoxCallTester;
+		};
+		DD2594A629C718BB000B1806 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD25947D29C718B9000B1806 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD25948429C718B9000B1806;
+			remoteInfo = CinnoxCallTester;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		125A41D9C5DE7132760C2977 /* Pods-CinnoxCallTester.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinnoxCallTester.debug.xcconfig"; path = "Target Support Files/Pods-CinnoxCallTester/Pods-CinnoxCallTester.debug.xcconfig"; sourceTree = "<group>"; };
+		BF08E1B32B07603F00D54E32 /* M800ServiceInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = M800ServiceInfo.plist; sourceTree = "<group>"; };
+		DD25948529C718B9000B1806 /* CinnoxCallTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CinnoxCallTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD25948829C718B9000B1806 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DD25948A29C718B9000B1806 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DD25948C29C718B9000B1806 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DD25948F29C718B9000B1806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DD25949129C718BA000B1806 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DD25949429C718BA000B1806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DD25949629C718BA000B1806 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD25949B29C718BB000B1806 /* CinnoxCallTesterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CinnoxCallTesterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD25949F29C718BB000B1806 /* CinnoxCallTesterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinnoxCallTesterTests.swift; sourceTree = "<group>"; };
+		DD2594A529C718BB000B1806 /* CinnoxCallTesterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CinnoxCallTesterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD2594A929C718BB000B1806 /* CinnoxCallTesterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinnoxCallTesterUITests.swift; sourceTree = "<group>"; };
+		DD2594AB29C718BB000B1806 /* CinnoxCallTesterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinnoxCallTesterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DD2594E529C71AD4000B1806 /* CallkitIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CallkitIcon.png; sourceTree = "<group>"; };
+		DD2594E729C71ADD000B1806 /* Calling_in.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Calling_in.wav; sourceTree = "<group>"; };
+		DD2594E829C71ADD000B1806 /* Multi_calling.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Multi_calling.wav; sourceTree = "<group>"; };
+		DD2594EB29C71B10000B1806 /* CinnoxCallTester.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CinnoxCallTester.entitlements; sourceTree = "<group>"; };
+		DDAC8DF729F65EDA00875C30 /* CallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallViewController.swift; sourceTree = "<group>"; };
+		DDAC8DF929F666F800875C30 /* RoundImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageButton.swift; sourceTree = "<group>"; };
+		DDAC8DFB29F7AD0E00875C30 /* KeyPadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPadViewController.swift; sourceTree = "<group>"; };
+		DDF669C829C808FC0002E61F /* MakeCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCallViewController.swift; sourceTree = "<group>"; };
+		E8802BC04D5BE5FCB6331555 /* Pods-CinnoxCallTester.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinnoxCallTester.release.xcconfig"; path = "Target Support Files/Pods-CinnoxCallTester/Pods-CinnoxCallTester.release.xcconfig"; sourceTree = "<group>"; };
+		EF63F9AE3BC2D0E225938225 /* Pods_CinnoxCallTester.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CinnoxCallTester.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DD25948229C718B9000B1806 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0CB93D0CAA4B46D384C6A9F4 /* Pods_CinnoxCallTester.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD25949829C718BB000B1806 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD2594A229C718BB000B1806 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		536498AC68CF0398D4A78F16 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF63F9AE3BC2D0E225938225 /* Pods_CinnoxCallTester.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D434CDBD7C35803CBF5D5AF8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				125A41D9C5DE7132760C2977 /* Pods-CinnoxCallTester.debug.xcconfig */,
+				E8802BC04D5BE5FCB6331555 /* Pods-CinnoxCallTester.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DD25947C29C718B9000B1806 = {
+			isa = PBXGroup;
+			children = (
+				DD25948729C718B9000B1806 /* CinnoxCallTester */,
+				DD25949E29C718BB000B1806 /* CinnoxCallTesterTests */,
+				DD2594A829C718BB000B1806 /* CinnoxCallTesterUITests */,
+				DD25948629C718B9000B1806 /* Products */,
+				D434CDBD7C35803CBF5D5AF8 /* Pods */,
+				536498AC68CF0398D4A78F16 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DD25948629C718B9000B1806 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DD25948529C718B9000B1806 /* CinnoxCallTester.app */,
+				DD25949B29C718BB000B1806 /* CinnoxCallTesterTests.xctest */,
+				DD2594A529C718BB000B1806 /* CinnoxCallTesterUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DD25948729C718B9000B1806 /* CinnoxCallTester */ = {
+			isa = PBXGroup;
+			children = (
+				DD2594EB29C71B10000B1806 /* CinnoxCallTester.entitlements */,
+				DD25948829C718B9000B1806 /* AppDelegate.swift */,
+				DD25948A29C718B9000B1806 /* SceneDelegate.swift */,
+				DDF669C729C806B90002E61F /* Call */,
+				DDF669C629C806A10002E61F /* Login */,
+				DD25948E29C718B9000B1806 /* Main.storyboard */,
+				DD25949129C718BA000B1806 /* Assets.xcassets */,
+				DD25949329C718BA000B1806 /* LaunchScreen.storyboard */,
+				DD2594E229C71AB7000B1806 /* Resources */,
+				DD2594C529C719F8000B1806 /* Supporting Files */,
+				DD25949629C718BA000B1806 /* Info.plist */,
+			);
+			path = CinnoxCallTester;
+			sourceTree = "<group>";
+		};
+		DD25949E29C718BB000B1806 /* CinnoxCallTesterTests */ = {
+			isa = PBXGroup;
+			children = (
+				DD25949F29C718BB000B1806 /* CinnoxCallTesterTests.swift */,
+			);
+			path = CinnoxCallTesterTests;
+			sourceTree = "<group>";
+		};
+		DD2594A829C718BB000B1806 /* CinnoxCallTesterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DD2594A929C718BB000B1806 /* CinnoxCallTesterUITests.swift */,
+				DD2594AB29C718BB000B1806 /* CinnoxCallTesterUITestsLaunchTests.swift */,
+			);
+			path = CinnoxCallTesterUITests;
+			sourceTree = "<group>";
+		};
+		DD2594C529C719F8000B1806 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BF08E1B32B07603F00D54E32 /* M800ServiceInfo.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DD2594E229C71AB7000B1806 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DD2594E429C71AC8000B1806 /* Ringtone */,
+				DD2594E329C71AC3000B1806 /* Image */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DD2594E329C71AC3000B1806 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				DD2594E529C71AD4000B1806 /* CallkitIcon.png */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		DD2594E429C71AC8000B1806 /* Ringtone */ = {
+			isa = PBXGroup;
+			children = (
+				DD2594E729C71ADD000B1806 /* Calling_in.wav */,
+				DD2594E829C71ADD000B1806 /* Multi_calling.wav */,
+			);
+			path = Ringtone;
+			sourceTree = "<group>";
+		};
+		DDF669C629C806A10002E61F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				DD25948C29C718B9000B1806 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		DDF669C729C806B90002E61F /* Call */ = {
+			isa = PBXGroup;
+			children = (
+				DDF669C829C808FC0002E61F /* MakeCallViewController.swift */,
+				DDAC8DF729F65EDA00875C30 /* CallViewController.swift */,
+				DDAC8DF929F666F800875C30 /* RoundImageButton.swift */,
+				DDAC8DFB29F7AD0E00875C30 /* KeyPadViewController.swift */,
+			);
+			path = Call;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DD25948429C718B9000B1806 /* CinnoxCallTester */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD2594AF29C718BB000B1806 /* Build configuration list for PBXNativeTarget "CinnoxCallTester" */;
+			buildPhases = (
+				017E47D2C51D71F25764D41C /* [CP] Check Pods Manifest.lock */,
+				DD25948129C718B9000B1806 /* Sources */,
+				DD25948229C718B9000B1806 /* Frameworks */,
+				DD25948329C718B9000B1806 /* Resources */,
+				5FDC0A8E1EE684A1D805F8E1 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CinnoxCallTester;
+			productName = CinnoxCallTester;
+			productReference = DD25948529C718B9000B1806 /* CinnoxCallTester.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DD25949A29C718BB000B1806 /* CinnoxCallTesterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD2594B229C718BB000B1806 /* Build configuration list for PBXNativeTarget "CinnoxCallTesterTests" */;
+			buildPhases = (
+				DD25949729C718BB000B1806 /* Sources */,
+				DD25949829C718BB000B1806 /* Frameworks */,
+				DD25949929C718BB000B1806 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD25949D29C718BB000B1806 /* PBXTargetDependency */,
+			);
+			name = CinnoxCallTesterTests;
+			productName = CinnoxCallTesterTests;
+			productReference = DD25949B29C718BB000B1806 /* CinnoxCallTesterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DD2594A429C718BB000B1806 /* CinnoxCallTesterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD2594B529C718BB000B1806 /* Build configuration list for PBXNativeTarget "CinnoxCallTesterUITests" */;
+			buildPhases = (
+				DD2594A129C718BB000B1806 /* Sources */,
+				DD2594A229C718BB000B1806 /* Frameworks */,
+				DD2594A329C718BB000B1806 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD2594A729C718BB000B1806 /* PBXTargetDependency */,
+			);
+			name = CinnoxCallTesterUITests;
+			productName = CinnoxCallTesterUITests;
+			productReference = DD2594A529C718BB000B1806 /* CinnoxCallTesterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DD25947D29C718B9000B1806 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					DD25948429C718B9000B1806 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					DD25949A29C718BB000B1806 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = DD25948429C718B9000B1806;
+					};
+					DD2594A429C718BB000B1806 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = DD25948429C718B9000B1806;
+					};
+				};
+			};
+			buildConfigurationList = DD25948029C718B9000B1806 /* Build configuration list for PBXProject "CinnoxCallTester" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DD25947C29C718B9000B1806;
+			productRefGroup = DD25948629C718B9000B1806 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DD25948429C718B9000B1806 /* CinnoxCallTester */,
+				DD25949A29C718BB000B1806 /* CinnoxCallTesterTests */,
+				DD2594A429C718BB000B1806 /* CinnoxCallTesterUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DD25948329C718B9000B1806 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD25949529C718BA000B1806 /* LaunchScreen.storyboard in Resources */,
+				DD25949229C718BA000B1806 /* Assets.xcassets in Resources */,
+				BF08E1B42B07603F00D54E32 /* M800ServiceInfo.plist in Resources */,
+				DD2594E929C71ADD000B1806 /* Calling_in.wav in Resources */,
+				DD2594EA29C71ADD000B1806 /* Multi_calling.wav in Resources */,
+				DD25949029C718B9000B1806 /* Main.storyboard in Resources */,
+				DD2594E629C71AD4000B1806 /* CallkitIcon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD25949929C718BB000B1806 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD2594A329C718BB000B1806 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		017E47D2C51D71F25764D41C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CinnoxCallTester-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5FDC0A8E1EE684A1D805F8E1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CinnoxCallTester/Pods-CinnoxCallTester-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CinnoxCallTester/Pods-CinnoxCallTester-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CinnoxCallTester/Pods-CinnoxCallTester-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DD25948129C718B9000B1806 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD25948D29C718B9000B1806 /* LoginViewController.swift in Sources */,
+				DD25948929C718B9000B1806 /* AppDelegate.swift in Sources */,
+				DDF669C929C808FC0002E61F /* MakeCallViewController.swift in Sources */,
+				DDAC8DFA29F666F800875C30 /* RoundImageButton.swift in Sources */,
+				DDAC8DFC29F7AD0E00875C30 /* KeyPadViewController.swift in Sources */,
+				DDAC8DF829F65EDA00875C30 /* CallViewController.swift in Sources */,
+				DD25948B29C718B9000B1806 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD25949729C718BB000B1806 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD2594A029C718BB000B1806 /* CinnoxCallTesterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD2594A129C718BB000B1806 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD2594AC29C718BB000B1806 /* CinnoxCallTesterUITestsLaunchTests.swift in Sources */,
+				DD2594AA29C718BB000B1806 /* CinnoxCallTesterUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DD25949D29C718BB000B1806 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DD25948429C718B9000B1806 /* CinnoxCallTester */;
+			targetProxy = DD25949C29C718BB000B1806 /* PBXContainerItemProxy */;
+		};
+		DD2594A729C718BB000B1806 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DD25948429C718B9000B1806 /* CinnoxCallTester */;
+			targetProxy = DD2594A629C718BB000B1806 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DD25948E29C718B9000B1806 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD25948F29C718B9000B1806 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DD25949329C718BA000B1806 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD25949429C718BA000B1806 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DD2594AD29C718BB000B1806 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DD2594AE29C718BB000B1806 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DD2594B029C718BB000B1806 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 125A41D9C5DE7132760C2977 /* Pods-CinnoxCallTester.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CinnoxCallTester/CinnoxCallTester.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CinnoxCallTester/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "CINNOX requires access to your Media Library for the messaging";
+				INFOPLIST_KEY_NSCameraUsageDescription = "CINNOX requires access to your phone’s camera for the messaging";
+				INFOPLIST_KEY_NSContactsUsageDescription = "We will securely interact your contacts to help you connect with your native contact.";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Your voice traffice to CINNOX is proxied with local TURN server";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "CINNOX requires access to your phone’s Microphone for the VoIP call";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "CINNOX requires access to your phone’s Photo for the messaging";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "CINNOX requires access to your phone’s photo library for the messaging";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		DD2594B129C718BB000B1806 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8802BC04D5BE5FCB6331555 /* Pods-CinnoxCallTester.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CinnoxCallTester/CinnoxCallTester.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CinnoxCallTester/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "CINNOX requires access to your Media Library for the messaging";
+				INFOPLIST_KEY_NSCameraUsageDescription = "CINNOX requires access to your phone’s camera for the messaging";
+				INFOPLIST_KEY_NSContactsUsageDescription = "We will securely interact your contacts to help you connect with your native contact.";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Your voice traffice to CINNOX is proxied with local TURN server";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "CINNOX requires access to your phone’s Microphone for the VoIP call";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "CINNOX requires access to your phone’s Photo for the messaging";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "CINNOX requires access to your phone’s photo library for the messaging";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		DD2594B329C718BB000B1806 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q8C886TPXB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.m800.liveconnect.mobile.agent.CinnoxCallTesterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CinnoxCallTester.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CinnoxCallTester";
+			};
+			name = Debug;
+		};
+		DD2594B429C718BB000B1806 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q8C886TPXB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.m800.liveconnect.mobile.agent.CinnoxCallTesterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CinnoxCallTester.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CinnoxCallTester";
+			};
+			name = Release;
+		};
+		DD2594B629C718BB000B1806 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q8C886TPXB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.m800.liveconnect.mobile.agent.CinnoxCallTesterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CinnoxCallTester;
+			};
+			name = Debug;
+		};
+		DD2594B729C718BB000B1806 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q8C886TPXB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.m800.liveconnect.mobile.agent.CinnoxCallTesterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CinnoxCallTester;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DD25948029C718B9000B1806 /* Build configuration list for PBXProject "CinnoxCallTester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD2594AD29C718BB000B1806 /* Debug */,
+				DD2594AE29C718BB000B1806 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD2594AF29C718BB000B1806 /* Build configuration list for PBXNativeTarget "CinnoxCallTester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD2594B029C718BB000B1806 /* Debug */,
+				DD2594B129C718BB000B1806 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD2594B229C718BB000B1806 /* Build configuration list for PBXNativeTarget "CinnoxCallTesterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD2594B329C718BB000B1806 /* Debug */,
+				DD2594B429C718BB000B1806 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD2594B529C718BB000B1806 /* Build configuration list for PBXNativeTarget "CinnoxCallTesterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD2594B629C718BB000B1806 /* Debug */,
+				DD2594B729C718BB000B1806 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DD25947D29C718B9000B1806 /* Project object */;
+}

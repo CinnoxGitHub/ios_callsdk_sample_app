@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>M800AppGroup</key>
+	<string>com.cinnox.visitor.example</string>
+	<key>M800KeychainGroup</key>
+	<string>com.cinnox.visitor.example</string>
+	<key>M800TeamId</key>
+	<string>YOUR_TEAM_ID</string>
+	<key>M800HostName</key>
+	<string>demo.cx.cinnox.com</string>
+	<key>M800VisitorNotification</key>
+	<true/>
+</dict>
+</plist>
