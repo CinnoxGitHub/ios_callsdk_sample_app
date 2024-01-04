@@ -9,7 +9,7 @@ plugin 'cocoapods-art', :sources => [
 use_frameworks!
 
 target 'CinnoxCallTester' do
-  pod 'M800CallSDK', '4.3.0.4'
+  pod 'M800CallSDK', '4.3.0.38'
 end
 
 post_install do |installer|

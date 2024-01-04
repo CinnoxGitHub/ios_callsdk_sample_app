@@ -3,37 +3,36 @@ PODS:
     - CocoaMQTT/Core (= 2.1.6)
   - CocoaMQTT/Core (2.1.6):
     - MqttCocoaAsyncSocket (~> 1.0.8)
-  - M800CallSDK (4.3.0.4):
-    - M800CoreSDK (~> 4.3.0.6)
-    - webrtc-ios (~> 1.0.4.12)
-  - M800CoreSDK (4.3.0.6):
+  - M800CallSDK (4.3.0.38):
+    - M800CoreSDK (~> 4.3.0.34)
+    - M800WebRTC (~> 1.0.4.12)
+  - M800CoreSDK (4.3.0.34):
     - CocoaMQTT (= 2.1.6)
     - Starscream (= 4.0.6)
+  - M800WebRTC (1.0.4.12)
   - MqttCocoaAsyncSocket (1.0.8)
   - Starscream (4.0.6)
-  - webrtc-ios (1.0.4.12)
 
 DEPENDENCIES:
-  - M800CallSDK (= 4.3.0.4)
+  - M800CallSDK (= 4.3.0.38)
 
 SPEC REPOS:
-  https://artifactory.maaii.com/artifactory/api/pods/lcc5-cocoa-local:
-    - M800CallSDK
-    - M800CoreSDK
-    - webrtc-ios
   https://github.com/CocoaPods/Specs.git:
     - CocoaMQTT
+    - M800CallSDK
+    - M800CoreSDK
+    - M800WebRTC
     - MqttCocoaAsyncSocket
     - Starscream
 
 SPEC CHECKSUMS:
   CocoaMQTT: 1f206228b29318eabdacad0c2e4e88575922c27a
-  M800CallSDK: 28ceb2335d6d6d0a422869741205ed22e33cd935
-  M800CoreSDK: 980bf78e230e15f4d62074611261cfc9e7981c47
+  M800CallSDK: 4d767e153ffc8114c1075f598ceb32b137676b90
+  M800CoreSDK: 29e0c29f58e718f43e4dc99f718092c9048ffebe
+  M800WebRTC: dbfd4c93ca7cc8cc3cdf0eea2701cb5da1e809b3
   MqttCocoaAsyncSocket: 77d3b74f76228dd5a05d1f9526eab101d415b30c
   Starscream: fb2c4510bebf908c62bd383bcf05e673720e91fd
-  webrtc-ios: 34591e00f4fe9f87be55f4dfe97f1b88f210ba28
 
-PODFILE CHECKSUM: 78cd991ff9a47ebd6ef045cd799f1496f0a48ae1
+PODFILE CHECKSUM: 21abd4316cd3e2ee9491c91701ca0b4105f57163
 
-COCOAPODS: 1.14.2
+COCOAPODS: 1.13.0
