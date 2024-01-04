@@ -3,6 +3,9 @@
 [![LICENSE](https://img.shields.io/badge/LICENSE-MIT-black?style=flat-square)](https://img.shields.io/badge/iOS-14-blue?style=flat-square)
 # `M800CallSDK`
 Welcome to the M800CallSDK framework integration guide. This documentation provides detailed instructions to seamlessly incorporate the M800CallSDK into your iOS application, enhancing it with robust calling capabilities.
+
+<img src="https://github.com/CinnoxGitHub/ios_callsdk_sample_app/blob/330ba065de38b9dc8968cec8b1ba6e918473aaf1/Demo.gif" width="200">
+
 ## iOS Quick Start Guide
 
 To quickly integrate the `M800CallSDK` framework into your iOS application, follow these steps:
