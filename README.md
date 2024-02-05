@@ -34,9 +34,8 @@ end
 > Note: Make sure you have CocoaPods installed on your system before running the `pod install` command.
 4. Once the installation is complete, open the generated `.xcworkspace` file to access your project in Xcode.
 
-## Adding a Sample App to a Cinnox Project
-
-To add a sample app to a Cinnox project, follow these steps:
+## Build `CinnoxCallTester`
+To build the provided sample project `CinnoxCallTester`, follow these steps:
 
 1. Use the `bundleID` from your Xcode project.
 2. Download the generated `M800ServiceInfo.plist` file from Cinnox.
