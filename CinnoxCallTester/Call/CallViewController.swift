@@ -21,7 +21,7 @@ class CallViewController: UIViewController {
     let holdButton = RoundImageButton(imageType: .hold, backgroundColor: .white)
     let hangupButton = RoundImageButton(imageType: .hangup, backgroundColor: .systemRed)
     let routingButton = RoundImageButton(imageType: .speaker, backgroundColor: .white)
-    let transferButton = RoundImageButton(imageType: .transfer, backgroundColor: .white)
+    let dtmfButton = RoundImageButton(imageType: .dtmf, backgroundColor: .white)
     
     @IBOutlet weak var callInviteView: UIStackView!
     let durationTimer = Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()
@@ -80,7 +80,7 @@ class CallViewController: UIViewController {
     }
     
     @objc
-    private func transfer() {
+    private func dtmf() {
         guard let keypad = KeyPadViewController.instantiate(delegate: self, keypadType: .dtmf) else { return }
         keypad.currentDialNumber = dtmfFullText
         let popoverViewController = UINavigationController(rootViewController: keypad)
@@ -88,8 +88,8 @@ class CallViewController: UIViewController {
         keypad.preferredContentSize = CGSize(width: 320, height: 500)
         if let popoverController = popoverViewController.popoverPresentationController {
             popoverController.delegate = self
-            popoverController.sourceView = transferButton
-            popoverController.sourceRect = transferButton.bounds
+            popoverController.sourceView = dtmfButton
+            popoverController.sourceRect = dtmfButton.bounds
             popoverController.permittedArrowDirections = .any
             popoverController.backgroundColor = UIColor.white
             present(popoverViewController, animated: true, completion: nil)
@@ -207,9 +207,9 @@ private extension CallViewController {
         holdButton.addTarget(self, action: #selector(hold), for: .touchUpInside)
         hangupButton.addTarget(self, action: #selector(hangup), for: .touchUpInside)
         routingButton.addTarget(self, action: #selector(changeRoute), for: .touchUpInside)
-        transferButton.addTarget(self, action: #selector(transfer), for: .touchUpInside)
+        dtmfButton.addTarget(self, action: #selector(dtmf), for: .touchUpInside)
   
-        [muteButton, holdButton, hangupButton, routingButton, transferButton].forEach { button in
+        [muteButton, holdButton, hangupButton, routingButton, dtmfButton].forEach { button in
             callControlStackView.addArrangedSubview(button)
         }
     }

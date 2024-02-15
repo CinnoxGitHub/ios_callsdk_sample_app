@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0CB93D0CAA4B46D384C6A9F4 /* Pods_CinnoxCallTester.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF63F9AE3BC2D0E225938225 /* Pods_CinnoxCallTester.framework */; };
+		49C3F61D2B732ED9001ABEF6 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3F61C2B732ED9001ABEF6 /* UIViewController+Extension.swift */; };
 		BF08E1B42B07603F00D54E32 /* M800ServiceInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF08E1B32B07603F00D54E32 /* M800ServiceInfo.plist */; };
 		DD25948929C718B9000B1806 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD25948829C718B9000B1806 /* AppDelegate.swift */; };
 		DD25948B29C718B9000B1806 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD25948A29C718B9000B1806 /* SceneDelegate.swift */; };
-		DD25948D29C718B9000B1806 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD25948C29C718B9000B1806 /* LoginViewController.swift */; };
 		DD25949029C718B9000B1806 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD25948E29C718B9000B1806 /* Main.storyboard */; };
 		DD25949229C718BA000B1806 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD25949129C718BA000B1806 /* Assets.xcassets */; };
 		DD25949529C718BA000B1806 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD25949329C718BA000B1806 /* LaunchScreen.storyboard */; };
@@ -46,11 +46,11 @@
 
 /* Begin PBXFileReference section */
 		125A41D9C5DE7132760C2977 /* Pods-CinnoxCallTester.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinnoxCallTester.debug.xcconfig"; path = "Target Support Files/Pods-CinnoxCallTester/Pods-CinnoxCallTester.debug.xcconfig"; sourceTree = "<group>"; };
+		49C3F61C2B732ED9001ABEF6 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		BF08E1B32B07603F00D54E32 /* M800ServiceInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = M800ServiceInfo.plist; sourceTree = "<group>"; };
 		DD25948529C718B9000B1806 /* CinnoxCallTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CinnoxCallTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD25948829C718B9000B1806 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD25948A29C718B9000B1806 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DD25948C29C718B9000B1806 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DD25948F29C718B9000B1806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD25949129C718BA000B1806 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD25949429C718BA000B1806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,6 +98,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49C3F61B2B732EA6001ABEF6 /* UIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				DDAC8DF929F666F800875C30 /* RoundImageButton.swift */,
+				49C3F61C2B732ED9001ABEF6 /* UIViewController+Extension.swift */,
+			);
+			path = UIComponent;
+			sourceTree = "<group>";
+		};
 		536498AC68CF0398D4A78F16 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,8 +152,8 @@
 				DD2594EB29C71B10000B1806 /* CinnoxCallTester.entitlements */,
 				DD25948829C718B9000B1806 /* AppDelegate.swift */,
 				DD25948A29C718B9000B1806 /* SceneDelegate.swift */,
+				49C3F61B2B732EA6001ABEF6 /* UIComponent */,
 				DDF669C729C806B90002E61F /* Call */,
-				DDF669C629C806A10002E61F /* Login */,
 				DD25948E29C718B9000B1806 /* Main.storyboard */,
 				DD25949129C718BA000B1806 /* Assets.xcassets */,
 				DD25949329C718BA000B1806 /* LaunchScreen.storyboard */,
@@ -206,20 +215,11 @@
 			path = Ringtone;
 			sourceTree = "<group>";
 		};
-		DDF669C629C806A10002E61F /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				DD25948C29C718B9000B1806 /* LoginViewController.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
 		DDF669C729C806B90002E61F /* Call */ = {
 			isa = PBXGroup;
 			children = (
 				DDF669C829C808FC0002E61F /* MakeCallViewController.swift */,
 				DDAC8DF729F65EDA00875C30 /* CallViewController.swift */,
-				DDAC8DF929F666F800875C30 /* RoundImageButton.swift */,
 				DDAC8DFB29F7AD0E00875C30 /* KeyPadViewController.swift */,
 			);
 			path = Call;
@@ -404,11 +404,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD25948D29C718B9000B1806 /* LoginViewController.swift in Sources */,
 				DD25948929C718B9000B1806 /* AppDelegate.swift in Sources */,
 				DDF669C929C808FC0002E61F /* MakeCallViewController.swift in Sources */,
 				DDAC8DFA29F666F800875C30 /* RoundImageButton.swift in Sources */,
 				DDAC8DFC29F7AD0E00875C30 /* KeyPadViewController.swift in Sources */,
+				49C3F61D2B732ED9001ABEF6 /* UIViewController+Extension.swift in Sources */,
 				DDAC8DF829F65EDA00875C30 /* CallViewController.swift in Sources */,
 				DD25948B29C718B9000B1806 /* SceneDelegate.swift in Sources */,
 			);

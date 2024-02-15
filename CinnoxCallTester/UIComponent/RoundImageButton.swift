@@ -16,7 +16,7 @@ class RoundImageButton: UIButton {
         case end
         case hangup
         case speaker
-        case transfer
+        case dtmf
         
         var image: UIImage? {
             switch self {
@@ -30,8 +30,8 @@ class RoundImageButton: UIButton {
                 return UIImage(named: "call-panel-end")
             case .speaker:
                 return UIImage(named: "call-panel-audio-speaker")
-            case .transfer:
-                return UIImage(named: "call-panel-transfer")
+            case .dtmf:
+                return UIImage(named: "call-keypad-icon")
             }
         }
     }
@@ -56,7 +56,7 @@ class RoundImageButton: UIButton {
     
     func setSelected(isSelected: Bool) {
         DispatchQueue.main.async {
-            self.backgroundColor = isSelected ? .white : .darkGray
+            self.backgroundColor = isSelected ? .white : .lightGray
         }
     }
     
@@ -70,3 +70,4 @@ class RoundImageButton: UIButton {
     }
     
 }
+
