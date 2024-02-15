@@ -4,7 +4,7 @@
 # `M800CallSDK`
 Welcome to the M800CallSDK framework integration guide. This documentation provides detailed instructions to seamlessly incorporate the M800CallSDK into your iOS application, enhancing it with robust calling capabilities.
 
-<img src="https://github.com/CinnoxGitHub/ios_callsdk_sample_app/blob/330ba065de38b9dc8968cec8b1ba6e918473aaf1/Demo.gif" width="200">
+<img src="https://github.com/CinnoxGitHub/ios_callsdk_sample_app/blob/d1385a1bef70c7872941f109d8cb10685d0f77d5/Demo.gif" width="200">
 
 ## iOS Quick Start Guide
 
