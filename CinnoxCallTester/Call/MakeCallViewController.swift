@@ -28,41 +28,51 @@ class MakeCallViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
     
-    private var core: CinnoxCore? {
-        return CinnoxCore.current
-    }
-    
-    var callManager: CinnoxCallManager? {
-        return core?.callManager
-    }
-    
-    var staffManager: CinnoxStaffManager? {
-        return core?.staffManager
-    }
- 
     @Published private var hadLogin: Bool = false
     private var subscriptions = Set<AnyCancellable>()
     
-    let serviceName = "YOURSERVICENAME.cinnox.com"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.callManager?.addDelegate(self)
         binding()
         setupUI()
         setupAudioPermission()
         checkLogin()
+        self.callManager?.addDelegate(self)
+    }
+}
+
+// MARK: CinnoxCallManagerDelegate
+extension MakeCallViewController: CinnoxCallManagerDelegate {
+    func onStateChanged(newState: CinnoxCallManagerState) -> Bool {
+        return true
     }
     
-    // MARK: Make Call
+    @MainActor
+    func onIncomingCall(session: CinnoxCallSession) -> Bool {
+        DispatchQueue.main.async { [weak self] in
+            guard let callView = CallViewController.instantiate(with: session) else { return }
+            callView.modalPresentationStyle = .fullScreen
+            self?.present(callView, animated: true)
+        }
+        return true
+    }
+    
+    func onMissedCall(info: M800CallSDK.CinnoxMissedCallInfo) -> Bool {
+        showToast(message: "Call Missed")
+        return true
+    }
+}
+
+// MARK: Make On-net Call
+private extension MakeCallViewController {
     @IBAction func makeOnnetCall(_ sender: UIButton) {
         let calleeEid = calleeEidTextField.text ?? ""
+        guard !calleeEid.isEmpty else {
+            showAlertDialog(title: "Missing Callee Eid")
+            return
+        }
         Task {
             do {
-                guard !calleeEid.isEmpty else {
-                    showAlertDialog(title: "Missing Callee Eid")
-                    return
-                }
                 try await startOnnetCall(calleeEid: calleeEid)
             } catch {
                 showAlertDialog(title: error.localizedDescription)
@@ -70,15 +80,29 @@ class MakeCallViewController: UIViewController {
         }
     }
     
+    @MainActor
+    func startOnnetCall(calleeEid: String) async throws {
+        let options = CinnoxCallOptions.initOnnetCall(eid: calleeEid)
+        guard let session = try? await callManager?.makeCall(callOptions: options) else {
+            return
+        }
+        guard let callView = CallViewController.instantiate(with: session) else { return }
+        callView.modalPresentationStyle = .fullScreen
+        present(callView, animated: true)
+    }
+}
+
+// MARK: Make Off-net Call
+private extension MakeCallViewController {
     @IBAction func makeOffnetCall(_ sender: UIButton) {
         let callerCLI = callerCLITextField.text ?? ""
         let calleeNumber = calleeNumberTextField.text ?? ""
+        guard !callerCLI.isEmpty, !calleeNumber.isEmpty else {
+            showAlertDialog(title: "Missing Caller CLI or Callee Number")
+            return
+        }
         Task {
             do {
-                guard !callerCLI.isEmpty, !calleeNumber.isEmpty else {
-                    showAlertDialog(title: "Missing Caller CLI or Callee Number")
-                    return
-                }
                 try await startOffnetCall(callerCLI: callerCLI, phoneNumber: calleeNumber)
             } catch {
                 showAlertDialog(title: error.localizedDescription)
@@ -86,28 +110,15 @@ class MakeCallViewController: UIViewController {
         }
     }
     
-    func startOnnetCall(calleeEid: String) async throws {
-        let options = CinnoxCallOptions.initOnnetCall(eid: calleeEid)
-        guard let session = try? await callManager?.makeCall(callOptions: options) else {
-            return
-        }
-        DispatchQueue.main.async { [weak self] in
-            guard let callView = CallViewController.instantiate(with: session) else { return }
-            callView.modalPresentationStyle = .fullScreen
-            self?.present(callView, animated: true)
-        }
-    }
-    
+    @MainActor
     func startOffnetCall(callerCLI: String, phoneNumber: String) async throws {
         let options = CinnoxCallOptions.initOffnetCall(toNumber: phoneNumber, cliNumber: callerCLI)
         guard let session = try? await callManager?.makeCall(callOptions: options) else {
             return
         }
-        DispatchQueue.main.async { [weak self] in
-            guard let callView = CallViewController.instantiate(with: session) else { return }
-            callView.modalPresentationStyle = .fullScreen
-            self?.present(callView, animated: true)
-        }
+        guard let callView = CallViewController.instantiate(with: session) else { return }
+        callView.modalPresentationStyle = .fullScreen
+        present(callView, animated: true)
     }
 
     @objc func selectCallerCli() {
@@ -117,7 +128,17 @@ class MakeCallViewController: UIViewController {
             presentCliSelectionAlert(cliList: callerCliList)
         }
     }
+}
 
+// MARK: Authentication
+private extension MakeCallViewController {
+    func checkLogin() {
+        guard let core = CinnoxCore.current else { return }
+        if core.authenticationManager?.isUserLogin() ?? false {
+            hadLogin = true
+        }
+    }
+    
     @IBAction func onLoginTapped(_ sender: UIButton) {
         let alertContoller = UIAlertController(title: "Login", message: nil, preferredStyle: .alert)
         alertContoller.addTextField { textField in
@@ -142,51 +163,22 @@ class MakeCallViewController: UIViewController {
         present(alertContoller, animated: true)
     }
     
+    func login(account: String, password: String) {
+        Task { [weak self] in
+            do {
+                guard let eid = try await self?.core?.authenticationManager?.loginStaff(email: account, password: password) else {
+                    return
+                }
+                NSLog("login account(\(account) success, eid: \(eid)")
+                self?.hadLogin = true
+            } catch {
+                NSLog("login account(\(account)) failed: \(error)")
+            }
+        }
+    }
+    
     @IBAction func onLogoutTapped(_ sender: UIButton) {
         logout()
-    }
-    
-    @IBAction func onCallTypeSwitch(_ sender: UISwitch) {
-        offnetStackView.isHidden = sender.isOn
-        offnetCallButton.isHidden = sender.isOn
-        onnetStackView.isHidden = !sender.isOn
-        onnetCallButton.isHidden = !sender.isOn
-    }
-}
-
-// MARK: CallSessionDelegate
-extension MakeCallViewController: CinnoxCallManagerDelegate {
-    func onStateChanged(newState: CinnoxCallManagerState) -> Bool {
-        return true
-    }
-    
-    func onIncomingCall(session: CinnoxCallSession) -> Bool {
-        DispatchQueue.main.async { [weak self] in
-            guard let callView = CallViewController.instantiate(with: session) else { return }
-            callView.modalPresentationStyle = .fullScreen
-            self?.present(callView, animated: true)
-        }
-        return true
-    }
-    
-    func onMissedCall(info: M800CallSDK.CinnoxMissedCallInfo) -> Bool {
-        DispatchQueue.main.async { [weak self] in
-            self?.showToast(message: "Call Missed")
-        }
-        return true
-    }
-}
-
-// MARK: Authentication
-extension MakeCallViewController {
-    func login(account: String, password: String) {
-        core?.authenticationManager?.login(account: account, password: password, completionHandler: { [weak self] eid, error in
-            if let error = error {
-                NSLog("login account(\(account) failed: \(error)")
-                return
-            }
-            self?.hadLogin = true
-        })
     }
     
     func logout() {
@@ -199,17 +191,56 @@ extension MakeCallViewController {
             }
         })
     }
+}
+
+// MARK: Configure
+private extension MakeCallViewController {
+    func setupUI() {
+        callerCLITextField.placeholder = "Caller CLI Number(ex. +852xxxxxxxxx)"
+        calleeEidTextField.placeholder = "Callee Eid(ex. aaaaaaaa.bbbbbbbbbbbb.cccccccc.dddddddddddddddd)"
+        calleeNumberTextField.placeholder = "Callee Number(ex. +852xxxxxxxxx)"
+        onnetCallButton.isHidden = true
+        callerCLITextField.keyboardType = .phonePad
+        calleeNumberTextField.keyboardType = .phonePad
+        
+        let selectCallerCliGesture = UITapGestureRecognizer(target: self, action: #selector(selectCallerCli))
+        callerCLITextField.addGestureRecognizer(selectCallerCliGesture)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
+    }
     
-    func checkLogin() {
-        guard let core = CinnoxCore.initialize(serviceName: serviceName) else { return }
-        if core.authenticationManager?.isUserLogin() ?? false {
-            hadLogin = true
+    func binding() {
+        $hadLogin
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] isUserLogin in
+                guard let self = self else { return }
+                self.loginButton.isHidden = isUserLogin
+                self.logoutButton.isHidden = !isUserLogin
+                self.onnetCallButton.isEnabled = isUserLogin
+                self.offnetCallButton.isEnabled = isUserLogin
+            }.store(in: &subscriptions)
+    }
+    
+    func setupAudioPermission() {
+        if AVAudioSession.sharedInstance().recordPermission == .undetermined {
+            AVAudioSession.sharedInstance().requestRecordPermission { granted in
+                print(granted)
+            }
         }
+    }
+    
+    @IBAction func onCallTypeSwitch(_ sender: UISwitch) {
+        offnetStackView.isHidden = sender.isOn
+        offnetCallButton.isHidden = sender.isOn
+        onnetStackView.isHidden = !sender.isOn
+        onnetCallButton.isHidden = !sender.isOn
     }
 }
 
 // MARK: Utils
-extension MakeCallViewController {
+private extension MakeCallViewController {
     @MainActor
     func showAlertDialog(title: String) {
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
@@ -231,43 +262,21 @@ extension MakeCallViewController {
         present(alertContoller, animated: true)
     }
     
-    func setupAudioPermission() {
-        if AVAudioSession.sharedInstance().recordPermission == .undetermined {
-            AVAudioSession.sharedInstance().requestRecordPermission { granted in
-                print(granted)
-            }
-        }
-    }
-    
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
-    
-    func binding() {
-        $hadLogin
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] isUserLogin in
-                guard let self = self else { return }
-                self.loginButton.isHidden = isUserLogin
-                self.logoutButton.isHidden = !isUserLogin
-                self.onnetCallButton.isEnabled = isUserLogin
-                self.offnetCallButton.isEnabled = isUserLogin
-            }.store(in: &subscriptions)
+}
+
+private extension MakeCallViewController {
+    var core: CinnoxCore? {
+        return CinnoxCore.current
     }
     
-    func setupUI() {
-        callerCLITextField.placeholder = "Caller CLI Number(ex. +852xxxxxxxxx)"
-        calleeEidTextField.placeholder = "Callee Eid(ex. aaaaaaaa.bbbbbbbbbbbb.cccccccc.dddddddddddddddd)"
-        calleeNumberTextField.placeholder = "Callee Number(ex. +852xxxxxxxxx)"
-        onnetCallButton.isHidden = true
-        callerCLITextField.keyboardType = .phonePad
-        calleeNumberTextField.keyboardType = .phonePad
-        
-        let selectCallerCliGesture = UITapGestureRecognizer(target: self, action: #selector(selectCallerCli))
-        callerCLITextField.addGestureRecognizer(selectCallerCliGesture)
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        tapGesture.cancelsTouchesInView = false
-        view.addGestureRecognizer(tapGesture)
+    var callManager: CinnoxCallManager? {
+        return core?.callManager
+    }
+    
+    var staffManager: CinnoxStaffManager? {
+        return core?.staffManager
     }
 }

@@ -10,6 +10,7 @@ import UIKit
 
 extension UIViewController {
     
+    @MainActor
     func showToast(message: String, duration: TimeInterval = 3.0) {
         let toastContainer = UIView()
         toastContainer.backgroundColor = UIColor.black.withAlphaComponent(0.6)
