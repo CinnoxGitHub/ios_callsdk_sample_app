@@ -2,14 +2,11 @@
 # platform :ios, '13.0'
 
 source 'https://github.com/CocoaPods/Specs'
-plugin 'cocoapods-art', :sources => [
-  'lcc5-cocoa-local'
-]
 
 use_frameworks!
 
 target 'CinnoxCallTester' do
-  pod 'M800CallSDK', '4.3.0.56'
+  pod 'M800CallSDK', '4.3.0.63'
 end
 
 post_install do |installer|
