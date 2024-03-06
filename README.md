@@ -18,7 +18,7 @@ source 'https://github.com/CocoaPods/Specs'
 use_frameworks!
 
 target 'YOUR_APP_TARGET' do
-  pod 'M800CallSDK', '4.3.0.56'
+  pod 'M800CallSDK', '4.3.0.63'
 end
 
 post_install do |installer|
@@ -73,8 +73,8 @@ In your `AppDelegate.swift` file, add the following code snippet to the `applica
 import M800Core
 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Configure LiveConnectCore
-    LiveConnectCore.configure()
+    // Configure CinnoxCore
+    CinnoxCore.configure()
 
     // Notification Center setup
     UNUserNotificationCenter.current().delegate = self
@@ -160,7 +160,6 @@ extension ViewController: CinnoxCallSessionDelegate {
         /// The call is an incoming call. It is accepted and preparing to startCallEngine talking
         case .answering:
             break
-
         /// The call begins to talk.
         case .talking:
             break
